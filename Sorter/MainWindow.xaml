@@ -8,16 +8,22 @@
         Title="Sorter v0.1" Height="1080" Width="1920">
 
     <Grid>
-        <StackPanel Orientation="Horizontal" Background="MediumPurple" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="791*" />
+            <RowDefinition Height="248*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="MediumPurple" VerticalAlignment="Center" Height="25">
             <Label Margin="10,0,0,0" Height="23" Name="Label1">
                 Current File:
             </Label>
-            <Label Margin="5,0,0,0" Height="25" Name="FileNameLabel" Width="300" />
+            <Label Margin="5,0,0,0" Height="25" Name="FileNameLabel" Width="100" />
             <Button Margin="5,0,0,0" Height="23" Name="BrowseButton" Width="75" Click="BrowseButton_Click">
                 Browse
             </Button>
         </StackPanel>
-        <Image x:Name="imagePicture" MaxHeight="300" HorizontalAlignment="Center"/>
+        <Rectangle Grid.Row="1" Fill="AliceBlue"/>
+        <Image Grid.Row="1" x:Name="imagePicture" MaxHeight="750" HorizontalAlignment="Center" />
 
     </Grid>
 
