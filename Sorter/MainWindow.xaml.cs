@@ -24,7 +24,7 @@ namespace Sorter
             {
                 imagePicture.Source = new BitmapImage(new Uri(openDialog.FileName));
             }
-            int i = 0;
+            int i = 1;
         }
 
     }
