@@ -10,7 +10,7 @@
     <Grid>
         <!-- layout-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="25*" />
+            <RowDefinition Height="25*" /> 
             <RowDefinition Height="791*" />
             <RowDefinition Height="248*">
             </RowDefinition>
@@ -51,7 +51,17 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            <Button Grid.Column="0"  Name="FirstColumnButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
+                <StackPanel Orientation="Vertical"/>
+            </Button>
+
+            <Button Grid.Column="8"  Name="DeleteColumnButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
+                <StackPanel Orientation="Vertical"/>
+            </Button>
         </Grid>
+
+        
+
     </Grid>
 
 </Window>
