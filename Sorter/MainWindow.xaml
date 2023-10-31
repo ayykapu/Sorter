@@ -8,17 +8,50 @@
         Title="Sorter v0.1" Height="1080" Width="1920">
 
     <Grid>
-        <StackPanel Orientation="Horizontal" Background="MediumPurple" VerticalAlignment="Top">
-            <Label Margin="10,0,0,0" Height="23" Name="Label1">
-                Current File:
-            </Label>
-            <Label Margin="5,0,0,0" Height="25" Name="FileNameLabel" Width="300" />
-            <Button Margin="5,0,0,0" Height="23" Name="BrowseButton" Width="75" Click="BrowseButton_Click">
-                Browse
-            </Button>
-        </StackPanel>
-        <Image x:Name="imagePicture" MaxHeight="300" HorizontalAlignment="Center"/>
+        <!-- layout-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="791*" />
+            <RowDefinition Height="248*">
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <!-- grid row 0 -->
+        <Grid Background="LightSteelBlue">
+            <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" Height="25">
+                <Label Margin="10,0,0,0" Height="23" Name="Label1">
+                    Choose a file:
+                </Label>
+                <Label Margin="5,0,0,0" Height="25" Name="FileNameLabel" Width="100" />
+                <Button Margin="5,0,0,0" Height="23" Name="BrowseButton" Width="75" Click="BrowseButton_Click">
+                    Browse
+                </Button>
+                <TextBlock Name="fileNameDisplay" Text="" Margin="10,0,0,0" VerticalAlignment="Center" />
+            </StackPanel>
+        </Grid>
 
+        <!-- grid row 1 -->
+
+        <Grid Grid.Row="1">
+            <Image x:Name="imagePicture" MaxHeight="750" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+
+        <!-- grid row 2 -->
+        <Grid Grid.Row="2" Background="LightSteelBlue">
+            
+            <!-- row 2 layout -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        </Grid>
     </Grid>
 
 </Window>

@@ -24,6 +24,11 @@ namespace Sorter
             {
                 imagePicture.Source = new BitmapImage(new Uri(openDialog.FileName));
             }
+            
+            string baseName = openDialog.FileName;
+            int lastIndex = baseName.LastIndexOf("\\") + 1 ;
+            fileNameDisplay.Text = baseName.Remove(0, lastIndex);
+
         }
 
     }
