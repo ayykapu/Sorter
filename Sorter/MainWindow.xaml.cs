@@ -16,9 +16,8 @@ namespace Sorter
 
         public void BrowseButton_Click(object sender, RoutedEventArgs e)
         {
+
             OpenFileDialog openDialog = new OpenFileDialog();
-            openDialog.Filter = "Image files|*.bmp;*.jpg;*.png";
-            openDialog.FilterIndex = 1;
 
             if (openDialog.ShowDialog() == true)
             {

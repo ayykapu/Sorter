@@ -12,7 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="25*" /> 
             <RowDefinition Height="791*" />
-            <RowDefinition Height="248*">
+            <RowDefinition Height="250*">
             </RowDefinition>
         </Grid.RowDefinitions>
         
@@ -33,7 +33,35 @@
         <!-- grid row 1 -->
 
         <Grid Grid.Row="1">
-            <Image x:Name="imagePicture" MaxHeight="750" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="212"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Image x:Name="imagePicture" MaxHeight="750" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Grid>
+            <Grid Grid.Column="1" Background="AliceBlue">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0"  Name="FunButton1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Name="FunTextButton1" Text="Back" FontSize="25"/>
+                    </StackPanel>
+                </Button>
+                <Button Grid.Row="1"  Name="FunButton2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Name="FunTextButton2" Text="Rename" FontSize="25"/>
+                    </StackPanel>
+                </Button>
+                <Button Grid.Row="2"  Name="FunButton3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Name="FunTextButton3" Text="Delete" FontSize="25"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
         </Grid>
 
         <!-- grid row 2 -->
@@ -52,11 +80,49 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0"  Name="FirstColumnButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
-                <StackPanel Orientation="Vertical"/>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Name="ButtonTextBox1" Text="[Select folder]" FontSize="25"/>
+                </StackPanel>
             </Button>
-
-            <Button Grid.Column="8"  Name="DeleteColumnButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
-                <StackPanel Orientation="Vertical"/>
+            <Button Grid.Column="1"  Name="SecondColumnButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Name="ButtonTextBox2" Text="[Select folder]" FontSize="25"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="2"  Name="ThirdColumnButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Name="ButtonTextBox3" Text="[Select folder]" FontSize="25"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="3"  Name="FouthColumnButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Name="ButtonTextBox4" Text="[Select folder]" FontSize="25"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="4"  Name="FifthColumnButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Name="ButtonTextBox5" Text="[Select folder]" FontSize="25"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="5"  Name="SixthColumnButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Name="ButtonTextBox6" Text="[Select folder]" FontSize="25"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="6"  Name="SeventhColumnButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Name="ButtonTextBox7" Text="[Select folder]" FontSize="25"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="7"  Name="EighthColumnButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Name="ButtonTextBox8" Text="[Select folder]" FontSize="25"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="8"  Name="NinthColumnButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Name="ButtonTextBox9" Text="[Select folder]" FontSize="25"/>
+                </StackPanel>
             </Button>
         </Grid>
 
