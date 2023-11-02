@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sorter"
         mc:Ignorable="d"
-        Title="Sorter v0.3.2" Height="1080" Width="1920">
+        Title="Sorter v0.7" Height="1080" Width="1920">
 
     <Grid>
         <!-- layout-->
@@ -56,7 +56,7 @@
                         <TextBlock Name="FunTextButton2" Text="Rename" FontSize="25"/>
                     </StackPanel>
                 </Button>
-                <Button Grid.Row="2"  Name="FunButton3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
+                <Button Grid.Row="2"  Name="Delete" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200" Click="DeleteButton_Click">
                     <StackPanel Orientation="Vertical">
                         <TextBlock Name="FunTextButton3" Text="Delete" FontSize="25"/>
                     </StackPanel>
