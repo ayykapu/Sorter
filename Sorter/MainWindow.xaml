@@ -79,8 +79,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0"  Name="FirstColumnButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
-                <StackPanel Orientation="Vertical">
+            <Button Grid.Column="0"  Name="FirstColumnButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200" Click="FirstColumnButton_Click">
+                <StackPanel Orientation="Vertical" >
                     <TextBlock Name="ButtonTextBox1" Text="[Select folder]" FontSize="25"/>
                 </StackPanel>
             </Button>
