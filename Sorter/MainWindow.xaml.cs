@@ -19,6 +19,14 @@ namespace Sorter
         public string currentFile = "";
         public string[] allElements;
         public string FirstColumnButton_Destination = "";
+        public string SecondColumnButton_Destination = "";
+        public string ThirdColumnButton_Destination = "";
+        public string FourthColumnButton_Destination = "";
+        public string FifthColumnButton_Destination = "";
+        public string SixthColumnButton_Destination = "";
+        public string SeventhColumnButton_Destination = "";
+        public string EighthColumnButton_Destination = "";
+        public string NinthColumnButton_Destination = "";
         public string tempFolderPath = "";
         public int index = 0;
         public MainWindow()
@@ -96,17 +104,191 @@ namespace Sorter
                 NextImage();
             }
         }
+        public void SecondColumnButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(SecondColumnButton_Destination == "")
+            {
+                WinForms.FolderBrowserDialog dialog = new WinForms.FolderBrowserDialog();
+                WinForms.DialogResult result = dialog.ShowDialog();
 
+                if (result == WinForms.DialogResult.OK)
+                {
+                    ButtonTextBox2.Text = nameFix(dialog.SelectedPath);
+                    SecondColumnButton_Destination = dialog.SelectedPath;
+                }
+                else
+                {
+                    WinForms.MessageBox.Show("Invalid directory!");
+                }
+            }
+            else
+            {
+                File.Move(currentFile, SecondColumnButton_Destination + "\\" + nameFix(currentFile));
+                NextImage();
+            }
+        }
+        public void ThirdColumnButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ThirdColumnButton_Destination == "")
+            {
+                WinForms.FolderBrowserDialog dialog = new WinForms.FolderBrowserDialog();
+                WinForms.DialogResult result = dialog.ShowDialog();
 
+                if (result == WinForms.DialogResult.OK)
+                {
+                    ButtonTextBox3.Text = nameFix(dialog.SelectedPath);
+                    ThirdColumnButton_Destination = dialog.SelectedPath;
+                }
+                else
+                {
+                    WinForms.MessageBox.Show("Invalid directory!");
+                }
+            }
+            else
+            {
+                File.Move(currentFile, ThirdColumnButton_Destination + "\\" + nameFix(currentFile));
+                NextImage();
+            }
+        }
+        public void FourthColumnButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (FourthColumnButton_Destination == "")
+            {
+                WinForms.FolderBrowserDialog dialog = new WinForms.FolderBrowserDialog();
+                WinForms.DialogResult result = dialog.ShowDialog();
 
+                if (result == WinForms.DialogResult.OK)
+                {
+                    ButtonTextBox4.Text = nameFix(dialog.SelectedPath);
+                    FourthColumnButton_Destination = dialog.SelectedPath;
+                }
+                else
+                {
+                    WinForms.MessageBox.Show("Invalid directory!");
+                }
+            }
+            else
+            {
+                File.Move(currentFile, FourthColumnButton_Destination + "\\" + nameFix(currentFile));
+                NextImage();
+            }
+        }
+        public void FifthColumnButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (FifthColumnButton_Destination == "")
+            {
+                WinForms.FolderBrowserDialog dialog = new WinForms.FolderBrowserDialog();
+                WinForms.DialogResult result = dialog.ShowDialog();
 
+                if (result == WinForms.DialogResult.OK)
+                {
+                    ButtonTextBox5.Text = nameFix(dialog.SelectedPath);
+                    FifthColumnButton_Destination = dialog.SelectedPath;
+                }
+                else
+                {
+                    WinForms.MessageBox.Show("Invalid directory!");
+                }
+            }
+            else
+            {
+                File.Move(currentFile, FifthColumnButton_Destination + "\\" + nameFix(currentFile));
+                NextImage();
+            }
+        }
 
+        public void SixthColumnButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (SixthColumnButton_Destination == "")
+            {
+                WinForms.FolderBrowserDialog dialog = new WinForms.FolderBrowserDialog();
+                WinForms.DialogResult result = dialog.ShowDialog();
 
+                if (result == WinForms.DialogResult.OK)
+                {
+                    ButtonTextBox6.Text = nameFix(dialog.SelectedPath);
+                    SixthColumnButton_Destination = dialog.SelectedPath;
+                }
+                else
+                {
+                    WinForms.MessageBox.Show("Invalid directory!");
+                }
+            }
+            else
+            {
+                File.Move(currentFile, SixthColumnButton_Destination + "\\" + nameFix(currentFile));
+                NextImage();
+            }
+        }
+        public void SeventhColumnButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (SeventhColumnButton_Destination == "")
+            {
+                WinForms.FolderBrowserDialog dialog = new WinForms.FolderBrowserDialog();
+                WinForms.DialogResult result = dialog.ShowDialog();
 
+                if (result == WinForms.DialogResult.OK)
+                {
+                    ButtonTextBox7.Text = nameFix(dialog.SelectedPath);
+                    SeventhColumnButton_Destination = dialog.SelectedPath;
+                }
+                else
+                {
+                    WinForms.MessageBox.Show("Invalid directory!");
+                }
+            }
+            else
+            {
+                File.Move(currentFile, SeventhColumnButton_Destination + "\\" + nameFix(currentFile));
+                NextImage();
+            }
+        }
+        public void EighthColumnButton_Click(object sender, RoutedEventArgs e)  
+        {
+            if (EighthColumnButton_Destination == "")
+            {
+                WinForms.FolderBrowserDialog dialog = new WinForms.FolderBrowserDialog();
+                WinForms.DialogResult result = dialog.ShowDialog();
 
+                if (result == WinForms.DialogResult.OK)
+                {
+                    ButtonTextBox8.Text = nameFix(dialog.SelectedPath);
+                    EighthColumnButton_Destination = dialog.SelectedPath;
+                }
+                else
+                {
+                    WinForms.MessageBox.Show("Invalid directory!");
+                }
+            }
+            else
+            {
+                File.Move(currentFile, EighthColumnButton_Destination + "\\" + nameFix(currentFile));
+                NextImage();
+            }
+        }
+        public void NinthColumnButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (NinthColumnButton_Destination == "")
+            {
+                WinForms.FolderBrowserDialog dialog = new WinForms.FolderBrowserDialog();
+                WinForms.DialogResult result = dialog.ShowDialog();
 
-
-
+                if (result == WinForms.DialogResult.OK)
+                {
+                    ButtonTextBox9.Text = nameFix(dialog.SelectedPath);
+                    NinthColumnButton_Destination = dialog.SelectedPath;
+                }
+                else
+                {
+                    WinForms.MessageBox.Show("Invalid directory!");
+                }
+            }
+            else
+            {
+                File.Move(currentFile, NinthColumnButton_Destination + "\\" + nameFix(currentFile));
+                NextImage();
+            }
+        }
         public void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             WinForms.DialogResult result = WinForms.MessageBox.Show("  Are you sure?", "Delete status", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
