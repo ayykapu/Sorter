@@ -20,11 +20,24 @@ namespace Sorter
         public string currentFile = "";
         public string[] allElements;
         public string FirstColumnButton_Destination = "";
+        public string tempFolderPath = "";
         public int index = 0;
         public MainWindow()
         {
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             InitializeComponent();
+            tempFolderPath = Path.Combine(desktopPath, "SorterTemp");
+
+            if (!Directory.Exists(tempFolderPath))
+            {
+                Directory.CreateDirectory(tempFolderPath);
+            }
+            else
+            {
+                File.Delete(tempFolderPath + "\\tempfile.png");
+            }
         }
+
 
         public string nameFix(string path)
         {
@@ -36,11 +49,15 @@ namespace Sorter
 
         public void NextImage()
         {
-            imagePicture.Source = new BitmapImage(new Uri(allElements[index]));
+            WinForms.MessageBox.Show(tempFolderPath);
+            File.Copy(allElements[index],tempFolderPath + "\\tempfile.png");
+            imagePicture.Source = new BitmapImage(new Uri(tempFolderPath));
             currentFile = allElements[index];
             fileNameDisplay.Text = nameFix(currentFolder) + "\\" + nameFix(currentFile);
             index++;
         }
+
+
 
         public void BrowseButton_Click(object sender, RoutedEventArgs e)
         {
@@ -79,9 +96,9 @@ namespace Sorter
             }
             else
             {
-                // currentFile ---> FirstColumnButton_Destination
-                //NextImage();
-
+                File.Move(currentFile, FirstColumnButton_Destination);
+                File.Delete(tempFolderPath + "\\tempfile.png");
+                NextImage();
             }
 
         }
