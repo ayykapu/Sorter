@@ -81,10 +81,10 @@ namespace Sorter
             {
                 // currentFile ---> FirstColumnButton_Destination
                 //NextImage();
-                
+
             }
 
         }
     }
-    
+
 }
