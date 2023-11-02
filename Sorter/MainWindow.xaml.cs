@@ -2,12 +2,11 @@
 using System;
 using System.IO;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Controls;
 using WinForms = System.Windows.Forms;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Forms;
-using System.IO;
 using Microsoft.VisualBasic.Logging;
 using System.Security.Policy;
 using System.Threading.Tasks;
@@ -34,11 +33,14 @@ namespace Sorter
             }
             else
             {
-                File.Delete(tempFolderPath + "\\tempfile.png");
+                string[] files = Directory.GetFiles(tempFolderPath);
+
+                foreach (string file in files)
+                {
+                    File.Delete(file);
+                }
             }
         }
-
-
         public string nameFix(string path)
         {
             string result = "";
@@ -46,19 +48,14 @@ namespace Sorter
             result = path.Remove(0, lastIndex);
             return result;
         }
-
         public void NextImage()
         {
-            WinForms.MessageBox.Show(tempFolderPath);
-            File.Copy(allElements[index],tempFolderPath + "\\tempfile.png");
-            imagePicture.Source = new BitmapImage(new Uri(tempFolderPath));
+            File.Copy(allElements[index], tempFolderPath + "\\tempfile" + index + ".png");
+            imagePicture.Source = new BitmapImage(new Uri(tempFolderPath + "\\tempfile" + index + ".png"));
             currentFile = allElements[index];
             fileNameDisplay.Text = nameFix(currentFolder) + "\\" + nameFix(currentFile);
             index++;
         }
-
-
-
         public void BrowseButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -76,7 +73,6 @@ namespace Sorter
                 WinForms.MessageBox.Show("Invalid directory!");
             }
         }
-
         public void FirstColumnButton_Click(object sender, RoutedEventArgs e)
         {
             if (FirstColumnButton_Destination == "")
@@ -96,12 +92,31 @@ namespace Sorter
             }
             else
             {
-                File.Move(currentFile, FirstColumnButton_Destination);
-                File.Delete(tempFolderPath + "\\tempfile.png");
+                File.Move(currentFile, FirstColumnButton_Destination + "\\" + nameFix(currentFile));
                 NextImage();
             }
-
         }
-    }
 
+
+
+
+
+
+
+
+
+
+
+        public void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            WinForms.DialogResult result = WinForms.MessageBox.Show("  Are you sure?", "Delete status", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == WinForms.DialogResult.Yes)
+            {
+                File.Delete(currentFile);
+                NextImage();
+            }
+        }
+
+
+    }
 }
