@@ -10,6 +10,8 @@ using System.Windows.Media.Imaging;
 using Microsoft.VisualBasic.Logging;
 using System.Security.Policy;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic;
+using System.Windows.Navigation;
 
 namespace Sorter
 {
@@ -58,11 +60,20 @@ namespace Sorter
         }
         public void NextImage()
         {
-            File.Copy(allElements[index], tempFolderPath + "\\tempfile" + index + ".png");
-            imagePicture.Source = new BitmapImage(new Uri(tempFolderPath + "\\tempfile" + index + ".png"));
-            currentFile = allElements[index];
-            fileNameDisplay.Text = nameFix(currentFolder) + "\\" + nameFix(currentFile);
-            index++;
+            string[] pngFiles = Directory.GetFiles(currentFolder, "*.png");
+
+            if (pngFiles.Length == 0)
+            {
+                WinForms.MessageBox.Show("There are no PNGs left.");
+            }
+            else
+            {
+                File.Copy(allElements[index], tempFolderPath + "\\tempfile" + index + ".png");
+                imagePicture.Source = new BitmapImage(new Uri(tempFolderPath + "\\tempfile" + index + ".png"));
+                currentFile = allElements[index];
+                fileNameDisplay.Text = nameFix(currentFolder) + "\\" + nameFix(currentFile);
+                index++;
+            }
         }
         public void BrowseButton_Click(object sender, RoutedEventArgs e)
         {
@@ -74,6 +85,7 @@ namespace Sorter
             {
                 currentFolder = dialog.SelectedPath;
                 allElements = Directory.GetFileSystemEntries(currentFolder);
+
                 NextImage();
             }
             else
@@ -297,6 +309,16 @@ namespace Sorter
                 File.Delete(currentFile);
                 NextImage();
             }
+        }
+
+        public void RenameButton_Click(object sender, RoutedEventArgs e)
+        {
+            //string newName;
+            //newName = Interaction.InputBox("Rename file", "Rename file", nameFix(currentFile));
+            //int cut = currentFile.Length - nameFix(currentFile).Length;
+
+            //currentFile = currentFile.Substring(0, cut) + "\\" + newName;
+            
         }
 
 

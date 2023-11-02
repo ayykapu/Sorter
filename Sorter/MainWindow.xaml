@@ -51,7 +51,7 @@
                         <TextBlock Name="FunTextButton1" Text="Back [WIP]" FontSize="25"/>
                     </StackPanel>
                 </Button>
-                <Button Grid.Row="1"  Name="FunButton2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
+                <Button Grid.Row="1"  Name="FunButton2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200" Click="RenameButton_Click">
                     <StackPanel Orientation="Vertical">
                         <TextBlock Name="FunTextButton2" Text="Rename [WIP]" FontSize="25"/>
                     </StackPanel>
